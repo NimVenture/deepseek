@@ -1,2 +1,2 @@
-import chatgpt/[chat, types, exceptions]
+import deepseek/[chat, types, exceptions]
 export chat,types,exceptions
