@@ -10,7 +10,7 @@ proc complete*(apiKey: string, model: string, extro: JsonNode, asJson = false): 
   for key, val in extro:
     msg.add key, val
   let base = getEnv("DEEPSEEK_API_BASE", "https://api.deepseek.com/v1")
-  let resp = post("/chat/completions", headers= @{
+  let resp = post(base & "/chat/completions", headers= @{
       "Content-Type": "application/json",
       "Authorization": "Bearer " & apiKey,
     }, $msg)
