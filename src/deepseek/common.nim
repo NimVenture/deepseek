@@ -10,7 +10,7 @@ proc getException*(resp: Response): ref exceptions.DeepSeekError =
     result = newException(InvalidAPIKeyError, "")
   of 401:
     let data = parseJson(resp.body)
-    let err = data{"error"}.to(types.DeepSeekError)
+    let err = data{"error"}.to(DeepSeekErrorData)
     case err.code
       of "invalid_api_key":
         result = newException(InvalidAPIKeyError, err.message)
@@ -28,12 +28,12 @@ proc getException*(resp: Response): ref exceptions.DeepSeekError =
     result = newException(UnprocessableEntityError, $Http422)
   of 429:
     let data = parseJson(resp.body)
-    let err = data{"error"}.to(types.DeepSeekError)
+    let err = data{"error"}.to(DeepSeekErrorData)
     result = newException(RateLimitExceededError, err.message)
   of 500:
     result = newException(InternalServerError, $Http500)
   of 503:
     result = newException(ServerOverloadedError, $Http503)
   else:
-    result = newException(exceptions.DeepSeekError, "DeepSeek request error, code: " & $resp.code)
+    result = newException(DeepSeekError, "DeepSeek request error, code: " & $resp.code)
   result.code = resp.code

@@ -1,7 +1,7 @@
 
 import std/[options]
 
-type DeepSeekError* = object
+type DeepSeekErrorData* = object
   message*: string
   `type`: string
   code*: string
