@@ -1,4 +1,4 @@
-import std/[json, strformat]
+import std/[json, strformat, envvars]
 import puppy
 import ./[types, common]
 
@@ -9,7 +9,8 @@ proc complete*(apiKey: string, model: string, extro: JsonNode, asJson = false): 
     msg.add "response_format", %* { "type": "json_object" }
   for key, val in extro:
     msg.add key, val
-  let resp = post("https://api.deepseek.com/v1/chat/completions", headers= @{
+  let base = getEnv("DEEPSEEK_API_BASE", "https://api.deepseek.com/v1")
+  let resp = post("/chat/completions", headers= @{
       "Content-Type": "application/json",
       "Authorization": "Bearer " & apiKey,
     }, $msg)

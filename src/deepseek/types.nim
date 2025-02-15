@@ -27,6 +27,6 @@ type ChatCompletion* = object
   `object`*: string
   created*: int
   model*: string
-  system_fingerprint*: string
+  # system_fingerprint*: string
   choices*: seq[Choice]
   usage*: Usage
