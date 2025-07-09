@@ -1,0 +1,10 @@
+nimTitle	exceptions	exceptions.html	module src/deepseek/exceptions		0
+nim	DeepSeekError	exceptions.html#DeepSeekError	object DeepSeekError		2
+nim	InvalidAPIKeyError	exceptions.html#InvalidAPIKeyError	object InvalidAPIKeyError		4
+nim	InsufficientQuotaError	exceptions.html#InsufficientQuotaError	object InsufficientQuotaError		5
+nim	RateLimitExceededError	exceptions.html#RateLimitExceededError	object RateLimitExceededError		6
+nim	BadRequestError	exceptions.html#BadRequestError	object BadRequestError		7
+nim	AuthenticationError	exceptions.html#AuthenticationError	object AuthenticationError		8
+nim	UnprocessableEntityError	exceptions.html#UnprocessableEntityError	object UnprocessableEntityError		12
+nim	InternalServerError	exceptions.html#InternalServerError	object InternalServerError		13
+nim	ServerOverloadedError	exceptions.html#ServerOverloadedError	object ServerOverloadedError		14

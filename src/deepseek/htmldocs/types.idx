@@ -1,0 +1,6 @@
+nimTitle	types	types.html	module src/deepseek/types		0
+nim	DeepSeekErrorData	types.html#DeepSeekErrorData	object DeepSeekErrorData		4
+nim	Message	types.html#Message	object Message		10
+nim	Choice	types.html#Choice	object Choice		14
+nim	Usage	types.html#Usage	object Usage		20
+nim	ChatCompletion	types.html#ChatCompletion	object ChatCompletion		25

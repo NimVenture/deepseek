@@ -1,0 +1,2 @@
+nimTitle	common	common.html	module src/deepseek/common		0
+nim	getException	common.html#getException,Response	proc getException(resp: Response): ref exceptions.DeepSeekError		5
